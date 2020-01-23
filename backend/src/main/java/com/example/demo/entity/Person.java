@@ -11,12 +11,11 @@ import javax.validation.constraints.Pattern;
 @Data
 @NoArgsConstructor
 @Table(
-//   uniqueConstraints = @UniqueConstraint(columnNames = {"PERSON_ID"})
+// uniqueConstraints = @UniqueConstraint(columnNames = {"PERSON_ID"})
 )
 public class Person {
 
     @GeneratedValue
     @Id
     private Long id;
-
 }
