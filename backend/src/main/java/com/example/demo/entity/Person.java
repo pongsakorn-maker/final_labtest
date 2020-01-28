@@ -24,7 +24,7 @@ public class Person {
     private String personalId; // (รหัสประจำตัวบุคคล)
 
     @NotNull // NotNull คือ name ห้ามเป็น null
-    @Size(min = 0, max = 50) // Size(min = 0,max = 50) คือ ความยาวสตริงของ name ต้องไม่น้อยกว่า 0
+    @Size(min = 3, max = 50) // Size(min = 0,max = 50) คือ ความยาวสตริงของ name ต้องไม่น้อยกว่า 0
                              // และไม่มากกว่า 50
     private String name; // (ชื่อ)
 
