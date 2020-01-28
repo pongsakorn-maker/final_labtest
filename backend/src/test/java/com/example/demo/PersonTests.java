@@ -55,4 +55,26 @@ public class PersonTests {
         assertEquals(15, found.get().getInventoryweight());
     }
 
+    @Test
+    void testPersonIsEmailCorrect(){ //ตรวจสอบว่า Email จะถูกต้องเสมอ
+        Person person = new Person();
+        person.setPersonalId("B6005795"); // personalId ต้องขึ้นต้นด้วย B หรือ M หรือ D แล้วตามด้วย d คือ เลขฐาน 10 และ
+                                          // {7} คือ 7 ตัว
+        person.setName("Pongsakorn"); // Size(min = 0,max = 50) คือ ความยาวสตริงของ name ต้องไม่น้อยกว่า 0
+                                      // และไม่มากกว่า 50
+        person.setEmail("B6005795&sut.ac.th"); // Email คือ จะต้องให้ฟีลด์ email เป็น email ที่มี @ และ . เช่น
+                                               // ทำให้ผิดเป็น B6005795&sut.ac.th
+        person.setHight(168); // Min(100) คือการกำหนดค่าที่เป็นตัวเลขขั้นต่ำ ในที่นี้คือ 100 เซนติเมคร
+        person.setInventoryweight(15.00); // Max(20) คือการกำหนดค่าที่เป็นตัวเลขขั้นสูงสุด ในที่นี้คือ 20 กิโลกรัม
+
+        Set<ConstraintViolation<Person>> result = validator.validate(person); //สร้างตัวแปรเก็บค่าผิดปกติ ชื่อว่า result
+        // result ต้องมี error 1 ค่าเท่านั้น ก็คือจับ Email ผิด
+        assertEquals(1, result.size());
+
+        // error message ตรงชนิด และถูก field
+        ConstraintViolation<Person> v = result.iterator().next();
+        assertEquals("must be a well-formed email address", v.getMessage()); // จับข้อความ error ทำให้ทราบว่าเกิดจากอะไร
+        assertEquals("email", v.getPropertyPath().toString()); // ตรวจสอบ path ที่ผิดว่าใช่ email ไหม
+
+    }
 }
