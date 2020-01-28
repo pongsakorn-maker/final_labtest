@@ -79,7 +79,7 @@ public class PersonTests {
     }
 
     @Test
-    void testPersonIsHightLessThanMinValue(){ //ตรวจสอบว่า Email จะถูกต้องเสมอ
+    void testPersonIsHightLessThanMinValue(){ //ตรวจสอบว่า hight จะไม่น้อยกว่าค่า min
         Person person = new Person();
         person.setPersonalId("B6005795"); // personalId ต้องขึ้นต้นด้วย B หรือ M หรือ D แล้วตามด้วย d คือ เลขฐาน 10 และ
                                           // {7} คือ 7 ตัว
@@ -102,7 +102,7 @@ public class PersonTests {
     }
 
     @Test
-    void testPersonIsWeightGreaterThanMaxValue(){ //ตรวจสอบว่า Email จะถูกต้องเสมอ
+    void testPersonIsWeightGreaterThanMaxValue(){ //ตรวจสอบว่า weight  จะต้องไม่มากกว่า max 
         Person person = new Person();
         person.setPersonalId("B6005795"); // personalId ต้องขึ้นต้นด้วย B หรือ M หรือ D แล้วตามด้วย d คือ เลขฐาน 10 และ
                                           // {7} คือ 7 ตัว
@@ -125,7 +125,7 @@ public class PersonTests {
     }
 
     @Test
-    void testPersonNameMustNotBeNull(){ //ตรวจสอบว่า Email จะถูกต้องเสมอ
+    void testPersonNameMustNotBeNull(){ //ตรวจสอบว่า name จะต้องไม่เป้น null
         Person person = new Person();
         person.setPersonalId("B6005795"); // personalId ต้องขึ้นต้นด้วย B หรือ M หรือ D แล้วตามด้วย d คือ เลขฐาน 10 และ
                                           // {7} คือ 7 ตัว
@@ -148,7 +148,7 @@ public class PersonTests {
     }
 
     @Test
-    void testPersonNamePatternMustStartWithBCD(){ //ตรวจสอบว่า Email จะถูกต้องเสมอ
+    void testPersonNamePatternMustStartWithBCD(){ //ตรวจสอบว่า name จะถูกต้องตาม pattern เสมอ
         Person person = new Person();
         person.setPersonalId("A6005795"); // personalId ต้องขึ้นต้นด้วย B หรือ M หรือ D แล้วตามด้วย d คือ เลขฐาน 10 และ
                                           // {7} คือ 7  แต่เราใส่ A เป็นตัวขึ้นต้นเพื่อให้เกิด error
@@ -171,7 +171,7 @@ public class PersonTests {
     }
 
     @Test
-    void testPersonIsNameStringLongerThanMaxSize(){ //ตรวจสอบว่า Email จะถูกต้องเสมอ
+    void testPersonIsNameStringLongerThanMaxSize(){ //ตรวจสอบว่า name จะต้องไม่ยาวกว่า max size
         Person person = new Person();
         person.setPersonalId("B6005795"); // personalId ต้องขึ้นต้นด้วย B หรือ M หรือ D แล้วตามด้วย d คือ เลขฐาน 10 และ
                                           // {7} คือ 7 ตัว
@@ -194,7 +194,7 @@ public class PersonTests {
     }
 
     @Test
-    void testPersonIsNameStringShorterThanMinSize(){ //ตรวจสอบว่า Email จะถูกต้องเสมอ
+    void testPersonIsNameStringShorterThanMinSize(){ //ตรวจสอบว่า name จะต้องไม่สั้นกว่า min size
         Person person = new Person();
         person.setPersonalId("B6005795"); // personalId ต้องขึ้นต้นด้วย B หรือ M หรือ D แล้วตามด้วย d คือ เลขฐาน 10 และ
                                           // {7} คือ 7 ตัว
